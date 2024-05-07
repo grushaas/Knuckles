@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.picb_2_3 = new System.Windows.Forms.PictureBox();
-            this.picb_avatarEnemy = new System.Windows.Forms.PictureBox();
             this.picb_2_6 = new System.Windows.Forms.PictureBox();
             this.picb_2_9 = new System.Windows.Forms.PictureBox();
             this.picb_2_8 = new System.Windows.Forms.PictureBox();
@@ -48,7 +47,6 @@
             this.picb_1_7 = new System.Windows.Forms.PictureBox();
             this.picb_1_4 = new System.Windows.Forms.PictureBox();
             this.picb_1_1 = new System.Windows.Forms.PictureBox();
-            this.picb_avatarMe = new System.Windows.Forms.PictureBox();
             this.lb_nameEnemy = new System.Windows.Forms.Label();
             this.lb_nameMe = new System.Windows.Forms.Label();
             this.lb_point4 = new System.Windows.Forms.Label();
@@ -60,8 +58,12 @@
             this.picb_pickDice = new System.Windows.Forms.PictureBox();
             this.picb_stepUp = new System.Windows.Forms.PictureBox();
             this.picb_stepBottom = new System.Windows.Forms.PictureBox();
+            this.picb_moneyMe = new System.Windows.Forms.PictureBox();
+            this.lb_countMoney = new System.Windows.Forms.Label();
+            this.lb_countMoneyEnemy = new System.Windows.Forms.Label();
+            this.picb_moneyEnemy = new System.Windows.Forms.PictureBox();
+            this.bt_leaderBoard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picb_2_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picb_avatarEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_2_6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_2_9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_2_8)).BeginInit();
@@ -79,10 +81,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picb_1_7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_1_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_1_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picb_avatarMe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_pickDice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_stepUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_stepBottom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picb_moneyMe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picb_moneyEnemy)).BeginInit();
             this.SuspendLayout();
             // 
             // picb_2_3
@@ -97,15 +100,6 @@
             this.picb_2_3.TabStop = false;
             this.picb_2_3.DragDrop += new System.Windows.Forms.DragEventHandler(this.picb_2_3_DragDrop);
             this.picb_2_3.DragEnter += new System.Windows.Forms.DragEventHandler(this.picb_2_3_DragEnter);
-            // 
-            // picb_avatarEnemy
-            // 
-            this.picb_avatarEnemy.BackColor = System.Drawing.Color.Transparent;
-            this.picb_avatarEnemy.Location = new System.Drawing.Point(453, 43);
-            this.picb_avatarEnemy.Name = "picb_avatarEnemy";
-            this.picb_avatarEnemy.Size = new System.Drawing.Size(74, 73);
-            this.picb_avatarEnemy.TabIndex = 1;
-            this.picb_avatarEnemy.TabStop = false;
             // 
             // picb_2_6
             // 
@@ -328,15 +322,6 @@
             this.picb_1_1.DragDrop += new System.Windows.Forms.DragEventHandler(this.picb_1_1_DragDrop);
             this.picb_1_1.DragEnter += new System.Windows.Forms.DragEventHandler(this.picb_1_1_DragEnter);
             // 
-            // picb_avatarMe
-            // 
-            this.picb_avatarMe.BackColor = System.Drawing.Color.Transparent;
-            this.picb_avatarMe.Location = new System.Drawing.Point(12, 450);
-            this.picb_avatarMe.Name = "picb_avatarMe";
-            this.picb_avatarMe.Size = new System.Drawing.Size(74, 73);
-            this.picb_avatarMe.TabIndex = 19;
-            this.picb_avatarMe.TabStop = false;
-            // 
             // lb_nameEnemy
             // 
             this.lb_nameEnemy.AutoSize = true;
@@ -470,6 +455,66 @@
             this.picb_stepBottom.TabStop = false;
             this.picb_stepBottom.Visible = false;
             // 
+            // picb_moneyMe
+            // 
+            this.picb_moneyMe.BackColor = System.Drawing.Color.Transparent;
+            this.picb_moneyMe.Image = ((System.Drawing.Image)(resources.GetObject("picb_moneyMe.Image")));
+            this.picb_moneyMe.Location = new System.Drawing.Point(12, 488);
+            this.picb_moneyMe.Name = "picb_moneyMe";
+            this.picb_moneyMe.Size = new System.Drawing.Size(41, 35);
+            this.picb_moneyMe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picb_moneyMe.TabIndex = 31;
+            this.picb_moneyMe.TabStop = false;
+            // 
+            // lb_countMoney
+            // 
+            this.lb_countMoney.AutoSize = true;
+            this.lb_countMoney.BackColor = System.Drawing.Color.Transparent;
+            this.lb_countMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_countMoney.ForeColor = System.Drawing.Color.White;
+            this.lb_countMoney.Location = new System.Drawing.Point(59, 496);
+            this.lb_countMoney.Name = "lb_countMoney";
+            this.lb_countMoney.Size = new System.Drawing.Size(18, 20);
+            this.lb_countMoney.TabIndex = 32;
+            this.lb_countMoney.Text = "0";
+            // 
+            // lb_countMoneyEnemy
+            // 
+            this.lb_countMoneyEnemy.AutoSize = true;
+            this.lb_countMoneyEnemy.BackColor = System.Drawing.Color.Transparent;
+            this.lb_countMoneyEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lb_countMoneyEnemy.ForeColor = System.Drawing.Color.White;
+            this.lb_countMoneyEnemy.Location = new System.Drawing.Point(462, 92);
+            this.lb_countMoneyEnemy.Name = "lb_countMoneyEnemy";
+            this.lb_countMoneyEnemy.Size = new System.Drawing.Size(18, 20);
+            this.lb_countMoneyEnemy.TabIndex = 34;
+            this.lb_countMoneyEnemy.Text = "0";
+            // 
+            // picb_moneyEnemy
+            // 
+            this.picb_moneyEnemy.BackColor = System.Drawing.Color.Transparent;
+            this.picb_moneyEnemy.Image = ((System.Drawing.Image)(resources.GetObject("picb_moneyEnemy.Image")));
+            this.picb_moneyEnemy.Location = new System.Drawing.Point(486, 85);
+            this.picb_moneyEnemy.Name = "picb_moneyEnemy";
+            this.picb_moneyEnemy.Size = new System.Drawing.Size(41, 35);
+            this.picb_moneyEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picb_moneyEnemy.TabIndex = 33;
+            this.picb_moneyEnemy.TabStop = false;
+            // 
+            // bt_leaderBoard
+            // 
+            this.bt_leaderBoard.BackColor = System.Drawing.Color.Transparent;
+            this.bt_leaderBoard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_leaderBoard.BackgroundImage")));
+            this.bt_leaderBoard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_leaderBoard.FlatAppearance.BorderSize = 0;
+            this.bt_leaderBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_leaderBoard.Location = new System.Drawing.Point(35, 43);
+            this.bt_leaderBoard.Name = "bt_leaderBoard";
+            this.bt_leaderBoard.Size = new System.Drawing.Size(64, 64);
+            this.bt_leaderBoard.TabIndex = 35;
+            this.bt_leaderBoard.UseVisualStyleBackColor = false;
+            this.bt_leaderBoard.Click += new System.EventHandler(this.bt_leaderBoard_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,6 +522,11 @@
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(539, 609);
+            this.Controls.Add(this.bt_leaderBoard);
+            this.Controls.Add(this.lb_countMoneyEnemy);
+            this.Controls.Add(this.picb_moneyEnemy);
+            this.Controls.Add(this.lb_countMoney);
+            this.Controls.Add(this.picb_moneyMe);
             this.Controls.Add(this.picb_stepBottom);
             this.Controls.Add(this.picb_stepUp);
             this.Controls.Add(this.picb_pickDice);
@@ -488,7 +538,6 @@
             this.Controls.Add(this.lb_point4);
             this.Controls.Add(this.lb_nameMe);
             this.Controls.Add(this.lb_nameEnemy);
-            this.Controls.Add(this.picb_avatarMe);
             this.Controls.Add(this.picb_1_9);
             this.Controls.Add(this.picb_1_6);
             this.Controls.Add(this.picb_1_3);
@@ -506,12 +555,10 @@
             this.Controls.Add(this.picb_2_2);
             this.Controls.Add(this.picb_2_9);
             this.Controls.Add(this.picb_2_6);
-            this.Controls.Add(this.picb_avatarEnemy);
             this.Controls.Add(this.picb_2_3);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.picb_2_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picb_avatarEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_2_6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_2_9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_2_8)).EndInit();
@@ -529,10 +576,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picb_1_7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_1_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_1_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picb_avatarMe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_pickDice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_stepUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picb_stepBottom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picb_moneyMe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picb_moneyEnemy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,7 +589,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picb_2_3;
-        private System.Windows.Forms.PictureBox picb_avatarEnemy;
         private System.Windows.Forms.PictureBox picb_2_6;
         private System.Windows.Forms.PictureBox picb_2_9;
         private System.Windows.Forms.PictureBox picb_2_8;
@@ -559,7 +606,6 @@
         private System.Windows.Forms.PictureBox picb_1_7;
         private System.Windows.Forms.PictureBox picb_1_4;
         private System.Windows.Forms.PictureBox picb_1_1;
-        private System.Windows.Forms.PictureBox picb_avatarMe;
         private System.Windows.Forms.Label lb_nameEnemy;
         private System.Windows.Forms.Label lb_nameMe;
         private System.Windows.Forms.Label lb_point4;
@@ -571,6 +617,11 @@
         private System.Windows.Forms.PictureBox picb_pickDice;
         private System.Windows.Forms.PictureBox picb_stepUp;
         private System.Windows.Forms.PictureBox picb_stepBottom;
+        private System.Windows.Forms.PictureBox picb_moneyMe;
+        private System.Windows.Forms.Label lb_countMoney;
+        private System.Windows.Forms.Label lb_countMoneyEnemy;
+        private System.Windows.Forms.PictureBox picb_moneyEnemy;
+        private System.Windows.Forms.Button bt_leaderBoard;
     }
 }
 

@@ -27,12 +27,21 @@ namespace Knuckles
         private List<Label> scorings;
         private List<PictureBox> cellsDestroy;
         private bool FirstStep = true;
+        private User[] players;
 
         
 
         public Form1()
         {
             InitializeComponent();
+
+            players = gameModule.AuthorizationPlayers();
+
+            lb_nameMe.Text = players[0].name;
+            lb_countMoney.Text = players[0].money.ToString();
+
+            lb_nameEnemy.Text = players[1].name;
+            lb_countMoneyEnemy.Text = players[1].money.ToString();
 
             picb_1_1.AllowDrop = true;
             picb_1_2.AllowDrop = true;
@@ -123,7 +132,7 @@ namespace Knuckles
             string full = gameModule.OneSideFull(BottomCells, UpCells);
             gameModule.SetRandomDice(dices, rnd, picb_pickDice); // Установка рандомной костяшки
             gameModule.ScoringModule(cells, scorings, dices); // Подсчет очков
-            var result = gameModule.CalculationOfPoints(scorings, cells);
+            var result = gameModule.CalculationOfPoints(scorings, cells, players);
             
             if(full == "BottomFull")
             {
@@ -144,6 +153,8 @@ namespace Knuckles
                 result.Width = result.Width + 25;
                 Controls.Add(result);
                 result.BringToFront();
+
+                gameModule.SavePlayers(players); // Сохранение игроков
             }
         }
 
@@ -177,6 +188,12 @@ namespace Knuckles
             pen.Dispose();
             graphics.Dispose();
         }
+        private void bt_leaderBoard_Click(object sender, EventArgs e)
+        {
+            Leaderboard leaderboard = new Leaderboard();
+            leaderboard.ShowDialog();
+        }
+
 
         private void picb_pickDice_MouseDown(object sender, MouseEventArgs e)
         {

@@ -26,8 +26,8 @@ namespace Knuckles
             }
             else
             {
-                label2.Visible = true;
                 label1.Visible = false;
+                label2.Visible = true;
 
                 label3.Text = point1.ToString();
                 label4.Text = point2.ToString();
