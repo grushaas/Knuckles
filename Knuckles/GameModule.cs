@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Knuckles
 {
@@ -14,7 +15,50 @@ namespace Knuckles
         private Dices dice5;
         private Dices dice6;
 
-        public string OneSideFull(List<PictureBox> BottomCells, List<PictureBox> UpCells)
+        public void SavePlayers(User[] players) // Сохранение пользователей
+        {
+            var json = File.ReadAllText("../../Resources/Users.json");
+            var data = JsonConvert.DeserializeObject<List<User>>(json);
+
+            if (data != null)
+            {
+                foreach (var item in players)
+                {
+                    data.Add(item);
+                }
+
+                json = JsonConvert.SerializeObject(data);
+                File.WriteAllText("../../Resources/Users.json", json);
+            }
+
+            json = JsonConvert.SerializeObject(players);
+            File.WriteAllText("../../Resources/Users.json", json);
+        }
+
+        public User[] AuthorizationPlayers() // Авторизация игроков
+        {
+            User[] players = new User[2];
+
+            var player1 = AuthPlayer();
+            var player2 = AuthPlayer();
+
+            players[0] = player1;
+            players[1] = player2;
+
+            return players;
+        }
+
+        private User AuthPlayer()
+        {
+            using (Authorization authorization = new Authorization())
+            {
+                authorization.ShowDialog();
+
+                return authorization.user;
+            }
+        }
+
+        public string OneSideFull(List<PictureBox> BottomCells, List<PictureBox> UpCells) // Проверяем заполнился ли какая-нибудь сторона
         {
             if(CheckingСells(BottomCells))
             {
@@ -41,7 +85,7 @@ namespace Knuckles
             return true;
         }
 
-        public ResultOfTheGame CalculationOfPoints(List<Label> scorings, List<PictureBox> cells) // Подсчет очков, для выбора победителя
+        public ResultOfTheGame CalculationOfPoints(List<Label> scorings, List<PictureBox> cells, User[] players) // Подсчет очков, для выбора победителя
         {
             if(CheckingСells(cells))
             {
@@ -53,8 +97,10 @@ namespace Knuckles
 
                 if (sumPlayer1 > sumPlayer2)
                 {
+                    players[0].money += sumPlayer1;
                     return new ResultOfTheGame(true, sumPlayer1, sumPlayer2);
                 }
+                players[1].money += sumPlayer2;
                 return new ResultOfTheGame(false, sumPlayer1, sumPlayer2);
             }
             else
@@ -97,15 +143,15 @@ namespace Knuckles
             pickDice.BackgroundImage = dices[chooseDice].dice;
         }
 
-        public async void ScoringModule(List<PictureBox> cells, List<Label> scorings, List<Dices> dices) // Подсчет очков
+        public void ScoringModule(List<PictureBox> cells, List<Label> scorings, List<Dices> dices) // Подсчет очков
         {
-            int scoreLeftColumnI = /*await Task.Run(() => */LeftColumnI(cells, dices); // Подсчет очков левого нижнего столбца
-            int scoreCenterColumnI = /*await Task.Run(() =>*/ CenterColumnI(cells, dices); // Подсчет очков среднего нижнего столбца
-            int scoreRightColumnI = /*await Task.Run(() =>*/ RightColumnI(cells, dices); // Подсчет очков правого нижнего столбца
+            int scoreLeftColumnI = LeftColumnI(cells, dices); // Подсчет очков левого нижнего столбца
+            int scoreCenterColumnI = CenterColumnI(cells, dices); // Подсчет очков среднего нижнего столбца
+            int scoreRightColumnI = RightColumnI(cells, dices); // Подсчет очков правого нижнего столбца
 
-            int scoreLeftColumnE = /*await Task.Run(() =>*/ LeftColumnE(cells, dices); // Подсчет очков левого верхнего столбца
-            int scoreCenterColumnE = /*await Task.Run(() =>*/ CenterColumnE(cells, dices); // Подсчет очков среднего верхнего столбца
-            int scoreRightColumnE = /*await Task.Run(() =>*/ RightColumnE(cells, dices); // Подсчет очков среднего верхнего столбца
+            int scoreLeftColumnE = LeftColumnE(cells, dices); // Подсчет очков левого верхнего столбца
+            int scoreCenterColumnE = CenterColumnE(cells, dices); // Подсчет очков среднего верхнего столбца
+            int scoreRightColumnE = RightColumnE(cells, dices); // Подсчет очков среднего верхнего столбца
 
 
             scorings[0].Text = scoreLeftColumnE.ToString();
