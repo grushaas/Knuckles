@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Media;
 
 namespace Knuckles
 {
@@ -139,6 +140,9 @@ namespace Knuckles
 
         public void SetRandomDice(List<Dices> dices, Random rnd, PictureBox pickDice) // Установка рандомной костяшки
         {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = "../../Resources/Sounds/Dice.wav";
+            player.Play();
             int chooseDice = rnd.Next(0, 6);
             pickDice.BackgroundImage = dices[chooseDice].dice;
         }

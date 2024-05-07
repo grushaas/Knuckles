@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Media;
 using System.Windows.Forms;
 using Knuckles.Properties;
+
 
 namespace Knuckles
 {
@@ -28,8 +29,10 @@ namespace Knuckles
         private List<PictureBox> cellsDestroy;
         private bool FirstStep = true;
         private User[] players;
+        SoundPlayer player = new SoundPlayer();
 
-        
+
+
 
         public Form1()
         {
@@ -190,6 +193,8 @@ namespace Knuckles
         }
         private void bt_leaderBoard_Click(object sender, EventArgs e)
         {
+            player.SoundLocation = "../../Resources/Sounds/ClickButton.wav";
+            player.Play();
             Leaderboard leaderboard = new Leaderboard();
             leaderboard.ShowDialog();
         }
@@ -197,8 +202,9 @@ namespace Knuckles
 
         private void picb_pickDice_MouseDown(object sender, MouseEventArgs e)
         {
-
             //TODO Проверить на дефолтном курсоре
+            player.SoundLocation = "../../Resources/Sounds/mouseDown.wav";
+            player.Play();
             Bitmap bmp = new Bitmap(picb_pickDice.Width, picb_pickDice.Height);
             picb_pickDice.DrawToBitmap(bmp, new Rectangle(Point.Empty, bmp.Size));
 
@@ -228,6 +234,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_1.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_1.BorderStyle = BorderStyle.None;
 
@@ -257,6 +265,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_2.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_2.BorderStyle = BorderStyle.None;
 
@@ -293,6 +303,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_3.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_3.BorderStyle = BorderStyle.None;
 
@@ -333,6 +345,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_4.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_4.BorderStyle = BorderStyle.None;
 
@@ -361,6 +375,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_5.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_5.BorderStyle = BorderStyle.None;
 
@@ -397,6 +413,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_6.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_6.BorderStyle = BorderStyle.None;
 
@@ -437,6 +455,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_7.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_7.BorderStyle = BorderStyle.None;
 
@@ -465,6 +485,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_8.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_8.BorderStyle = BorderStyle.None;
 
@@ -501,6 +523,8 @@ namespace Knuckles
             {
                 if(!opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_1_9.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_1_9.BorderStyle = BorderStyle.None;
 
@@ -541,6 +565,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_1.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_1.BorderStyle = BorderStyle.None;
 
@@ -569,6 +595,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_2.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_2.BorderStyle = BorderStyle.None;
 
@@ -605,6 +633,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_3.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_3.BorderStyle = BorderStyle.None;
 
@@ -645,6 +675,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_4.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_4.BorderStyle = BorderStyle.None;
 
@@ -673,6 +705,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_5.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_5.BorderStyle = BorderStyle.None;
 
@@ -709,6 +743,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_6.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_6.BorderStyle = BorderStyle.None;
 
@@ -749,6 +785,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_7.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_7.BorderStyle = BorderStyle.None;
 
@@ -777,6 +815,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_8.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_8.BorderStyle = BorderStyle.None;
 
@@ -813,7 +853,8 @@ namespace Knuckles
             {
                 if(opponentMove)
                 {
-                    
+                    player.SoundLocation = "../../Resources/Sounds/chooseCell.wav";
+                    player.Play();
                     picb_2_9.BackgroundImage = (Image)e.Data.GetData(DataFormats.Bitmap);
                     picb_2_9.BorderStyle = BorderStyle.None;
 
