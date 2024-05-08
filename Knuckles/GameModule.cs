@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
 using System.Media;
+using Knuckles.Properties;
 
 namespace Knuckles
 {
@@ -187,6 +188,11 @@ namespace Knuckles
                                 {
                                     if (cells[i].BackgroundImage == cells[i - 1].BackgroundImage)
                                     {
+                                        if(cells[i].BackgroundImage == dice.dice)
+                                        {
+                                            //score -= dice.value;
+                                            additionScore += 1; 
+                                        }
                                         score -= dice.value;
                                         additionScore *= dice.value;
                                     }
@@ -195,11 +201,21 @@ namespace Knuckles
                                 {
                                     if (cells[i].BackgroundImage == cells[i - 1].BackgroundImage && cells[i].BackgroundImage == cells[i - 2].BackgroundImage)
                                     {
+                                        if (cells[i].BackgroundImage == dice.dice)
+                                        {
+                                            //score -= dice.value;
+                                            additionScore += 2;
+                                        }
                                         score -= dice.value;
                                         additionScore *= dice.value * dice.value;
                                     }
                                     else if (cells[i].BackgroundImage == cells[i - 2].BackgroundImage || cells[i].BackgroundImage == cells[i - 1].BackgroundImage)
                                     {
+                                        if (cells[i].BackgroundImage == dice.dice)
+                                        {
+                                            //score -= dice.value;
+                                            additionScore += 1;
+                                        }
                                         score -= dice.value;
                                         additionScore *= dice.value;
                                     }
