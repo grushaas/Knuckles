@@ -484,7 +484,7 @@
             this.lb_countMoneyEnemy.BackColor = System.Drawing.Color.Transparent;
             this.lb_countMoneyEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb_countMoneyEnemy.ForeColor = System.Drawing.Color.White;
-            this.lb_countMoneyEnemy.Location = new System.Drawing.Point(462, 92);
+            this.lb_countMoneyEnemy.Location = new System.Drawing.Point(440, 92);
             this.lb_countMoneyEnemy.Name = "lb_countMoneyEnemy";
             this.lb_countMoneyEnemy.Size = new System.Drawing.Size(18, 20);
             this.lb_countMoneyEnemy.TabIndex = 34;
@@ -507,6 +507,8 @@
             this.bt_leaderBoard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_leaderBoard.BackgroundImage")));
             this.bt_leaderBoard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_leaderBoard.FlatAppearance.BorderSize = 0;
+            this.bt_leaderBoard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_leaderBoard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bt_leaderBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_leaderBoard.Location = new System.Drawing.Point(35, 43);
             this.bt_leaderBoard.Name = "bt_leaderBoard";

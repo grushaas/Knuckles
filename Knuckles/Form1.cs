@@ -261,7 +261,7 @@ namespace Knuckles
             {
                 picb_1_1_DragDrop(sender, e);
             }
-            else
+            else if(picb_1_2.BackgroundImage == null)
             {
                 if(!opponentMove)
                 {
@@ -299,7 +299,7 @@ namespace Knuckles
             {
                 picb_1_2_DragDrop(sender, e);
             }
-            else
+            else if(picb_1_3.BackgroundImage == null)
             {
                 if(!opponentMove)
                 {
@@ -371,7 +371,7 @@ namespace Knuckles
             {
                 picb_1_4_DragDrop(sender, e);
             }
-            else
+            else if(picb_1_5.BackgroundImage == null)
             {
                 if(!opponentMove)
                 {
@@ -409,7 +409,7 @@ namespace Knuckles
             {
                 picb_1_5_DragDrop(sender, e);
             }
-            else
+            else if(picb_1_6.BackgroundImage == null)
             {
                 if(!opponentMove)
                 {
@@ -481,7 +481,7 @@ namespace Knuckles
             {
                 picb_1_7_DragDrop(sender, e);
             }
-            else
+            else if(picb_1_8.BackgroundImage == null)
             {
                 if(!opponentMove)
                 {
@@ -519,7 +519,7 @@ namespace Knuckles
             {
                 picb_1_8_DragDrop(sender, e);
             }
-            else
+            else if(picb_1_9.BackgroundImage == null)
             {
                 if(!opponentMove)
                 {
@@ -591,7 +591,7 @@ namespace Knuckles
             {
                 picb_2_1_DragDrop(sender, e);
             }
-            else
+            else if(picb_2_2.BackgroundImage == null)
             {
                 if(opponentMove)
                 {
@@ -629,7 +629,7 @@ namespace Knuckles
             {
                 picb_2_2_DragDrop(sender, e);
             }
-            else
+            else if(picb_2_3.BackgroundImage == null)
             {
                 if(opponentMove)
                 {
@@ -701,7 +701,7 @@ namespace Knuckles
             {
                 picb_2_4_DragDrop(sender, e);
             }
-            else
+            else if (picb_2_5.BackgroundImage == null)
             {
                 if(opponentMove)
                 {
@@ -739,7 +739,7 @@ namespace Knuckles
             {
                 picb_2_5_DragDrop(sender, e);
             }
-            else
+            else if (picb_2_6.BackgroundImage == null)
             {
                 if(opponentMove)
                 {
@@ -811,7 +811,7 @@ namespace Knuckles
             {
                 picb_2_7_DragDrop(sender, e);
             }
-            else
+            else if (picb_2_8.BackgroundImage == null)
             {
                 if(opponentMove)
                 {
@@ -849,7 +849,7 @@ namespace Knuckles
             {
                 picb_2_8_DragDrop(sender, e);
             }
-            else
+            else if (picb_2_9.BackgroundImage == null)
             {
                 if(opponentMove)
                 {
