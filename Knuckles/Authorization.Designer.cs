@@ -77,6 +77,7 @@
             this.Controls.Add(this.bt_accept);
             this.Name = "Authorization";
             this.Text = "Авторизация";
+            this.Activated += new System.EventHandler(this.Authorization_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 

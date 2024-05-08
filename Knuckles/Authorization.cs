@@ -38,10 +38,11 @@ namespace Knuckles
                 user = new User(name, 0);
                 data.Add(user);
                 json = JsonConvert.SerializeObject(data);
+                
 
                 File.WriteAllText("../../Resources/Users.json", json);
                 MessageBox.Show("Пользователь зарегистрирован");
-
+                DialogResult = DialogResult.OK;
                 return user;
             }
             else
@@ -53,6 +54,7 @@ namespace Knuckles
 
                 File.WriteAllText("../../Resources/Users.json", json);
                 MessageBox.Show("Пользователь зарегистрирован");
+                DialogResult = DialogResult.OK;
                 return user;
             }
         }
@@ -62,5 +64,11 @@ namespace Knuckles
             name = tb_nick.Text;
             CheckNameInJson();
         }
+
+        private void Authorization_Activated(object sender, EventArgs e)
+        {
+            tb_nick.Focus();
+        }
+
     }
 }
