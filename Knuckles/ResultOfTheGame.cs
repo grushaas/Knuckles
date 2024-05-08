@@ -18,16 +18,16 @@ namespace Knuckles
 
             if (win)
             {
-                label1.Visible = true;
-                label2.Visible = false;
+                label1.Visible = false;
+                label2.Visible = true;
 
                 label3.Text = point1.ToString();
                 label4.Text = point2.ToString();
             }
             else
             {
-                label1.Visible = false;
-                label2.Visible = true;
+                label1.Visible = true;
+                label2.Visible = false;
 
                 label3.Text = point1.ToString();
                 label4.Text = point2.ToString();
